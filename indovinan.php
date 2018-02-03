@@ -23,7 +23,7 @@ if (!isset($_POST["numero"])) {
 
 }  else if($_POST["numero"] == $_POST["random"]){ // must be equivalent
     //$_SESSION["conta"]++;
-    $message = "Bravoh! Hai indovinato in ".$_SESSION["conta"]." tentativi!"; 
+    $message = "Bravo! Hai indovinato in ".$_SESSION["conta"]." tentativi!"; 
     $a=1;
     unset($_SESSION["conta"]);
         //Include the $count variable to the $message to show the user how many tries to took him.
@@ -40,7 +40,7 @@ if (!isset($_POST["numero"])) {
     <div align='center'>
       <h1><?php if(isset($message)){ echo $message; }?></h1>
       <?php if($a==0 and $b==0){ ?>
-       <h2>Gioco dell'indovina numero <?php echo $_POST["random"] ?></h2>  <br>
+       <h2>Gioco dell'indovina numero</h2>  <br>
          Tentativo n. <?php if(isset($_SESSION["conta"])){echo $_SESSION["conta"];} ?>  <br>
           <form action='' method="post">
            <input type='text' name="numero"><br> 
