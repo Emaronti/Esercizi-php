@@ -6,15 +6,52 @@
 
 <body>
 
-  <div class="container">
-    <h2>Panel Footer</h2>
-    <div class="panel panel-default">
-      <div class="panel-heading">Panel Heading</div>
-      <div class="panel-body">Panel Content</div>
-      <div class="panel-footer">Panel Footer</div>
-    </div>
-  </div>
+  <div class="container" style="width:940px">
 
+    <div class="panel panel-default" style="background-color:#007BFF"  style="width:900px">
+      <div class="panel-heading" style="background-color:#007BFF;width:900px"><h1>Modulo di iscrizione</h1></div>
+      <div class="panel-body" style="width:900px">
+        <form action='' method='post'>
+          
+          Cognome: <input type="text"  class="form-control"  name="cognome"> 
+          <br> 
+          Nome: <input type="text" class="form-control"  name="nome"> <br> 
+          
+          <br>
+          Sesso:
+          <div class="radio">
+            <label><input type="radio" name="gender" value="m">Maschile</label>
+
+            <label><input type="radio" name="gender" value="f">Femminile</label>
+            
+            <label><input type="radio" name="gender" value="al">Altro</label>
+          </div>
+          <br> Nazionalita <select class="form-control" id="sel1">
+             <option name="ita">Italiana</option>
+            <option name="eng">Inglese</option>
+            <option name="usa">Statunitense</option>
+            <option name="esp">Spagnola</option>
+         </select> <br>
+
+          <div class="checkbox">
+            <label><input type="checkbox" name="cat" value="a">Cat. A</label>
+            <label><input type="checkbox" name="cat" value="b">Cat. B</label>
+          </div> <br>
+
+          e-mail: <input type="text" class="form-control" size="35" name="email"> <br>
+          Password: <input type="password" class="form-control" size="35" name="email">
+          
+        
+
+      </div>
+      <div class="panel-footer" align="center"  style="background-color:#007BFF;width:900px">
+
+        <button type="reset" class="btn"  style="background-color:grey"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Annulla</button>
+        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Conferma</button>
+      </div>
+    </div>
+  
+</form>
 </body>
 
 </html>
