@@ -2,6 +2,13 @@
 
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  <style>
+    body,h1{
+      color:white;
+    }
+  </style>
+  
 </head>
 
 <body>
@@ -11,35 +18,34 @@
     <div class="panel panel-default" style="background-color:#007BFF"  style="width:900px">
       <div class="panel-heading" style="background-color:#007BFF;width:900px"><h1>Modulo di iscrizione</h1></div>
       <div class="panel-body" style="width:900px">
-        <form action='' method='post'>
+        <form action='signup.php' method='post'>
           
-          Cognome: <input type="text"  class="form-control"  name="cognome"> 
+          Cognome: <input type="text"  class="form-control"  name="cognome" required> 
           <br> 
-          Nome: <input type="text" class="form-control"  name="nome"> <br> 
+          Nome: <input type="text" class="form-control"  name="nome" required> <br> 
           
           <br>
           Sesso:
           <div class="radio">
-            <label><input type="radio" name="gender" value="m">Maschile</label>
+            <label><input type="radio" name="gender" value="Maschile" required>Maschile</label>
 
-            <label><input type="radio" name="gender" value="f">Femminile</label>
-            
-            <label><input type="radio" name="gender" value="al">Altro</label>
+            <label><input type="radio" name="gender" value="Femminile" required>Femminile</label>
+                      
           </div>
-          <br> Nazionalita <select class="form-control" id="sel1">
-             <option name="ita">Italiana</option>
-            <option name="eng">Inglese</option>
-            <option name="usa">Statunitense</option>
-            <option name="esp">Spagnola</option>
+          <br> Nazionalita <select class="form-control" id="sel1" name="nazionalita" required>
+             <option value="Italiana">Italiana</option>
+            <option value="Inglese">Inglese</option>
+            <option value="Statunitense">Statunitense</option>
+            <option value="Spagnola">Spagnola</option>
          </select> <br>
 
           <div class="checkbox">
-            <label><input type="checkbox" name="cat" value="a">Cat. A</label>
-            <label><input type="checkbox" name="cat" value="b">Cat. B</label>
+            <label><input type="checkbox" name="cat" value="categ. A">Cat. A</label>
+            <label><input type="checkbox" name="cat1" value="categ. B">Cat. B</label>
           </div> <br>
 
-          e-mail: <input type="text" class="form-control" size="35" name="email"> <br>
-          Password: <input type="password" class="form-control" size="35" name="email">
+          e-mail: <input type="text" class="form-control" size="35" name="email" required> <br>
+          Password: <input type="password" class="form-control" size="35" name="pass"  required>
           
         
 
@@ -47,7 +53,7 @@
       <div class="panel-footer" align="center"  style="background-color:#007BFF;width:900px">
 
         <button type="reset" class="btn"  style="background-color:grey"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Annulla</button>
-        <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Conferma</button>
+        <button type="submit" class="btn btn-danger" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Conferma</button>
       </div>
     </div>
   
