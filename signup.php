@@ -28,6 +28,7 @@ $a=1;
 
 $email=$_REQUEST["email"];
 
+$pass=$_REQUEST["pass"];
 
 ?>
 
@@ -45,6 +46,10 @@ $email=$_REQUEST["email"];
        text-align:center;
        
      }
+     
+     a{
+       color: inherit;
+     }
   </style>
   
 </head>
@@ -56,7 +61,7 @@ $email=$_REQUEST["email"];
     <div class="panel panel-default" style="background-color:#6C757D"  style="width:900px">
       <div class="panel-heading" style="background-color:#6C757D;width:900px"><h1>Riepilogo dati</h1></div>
       <div class="panel-body" style="width:900px">
-        <form action='signup.php' method='post'>
+        
           <div class='spa'>
             <table align="center">
               <tr>
@@ -69,6 +74,7 @@ $email=$_REQUEST["email"];
               </td> 
                 
               <td align="left">
+                <br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$cognome ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nome ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$sesso ?></b><br>
@@ -87,11 +93,22 @@ $email=$_REQUEST["email"];
         </div>
       <div class="panel-footer" align="center"  style="background-color:#6C757D;width:900px">
 
-        <button type="reset" class="btn"  style="background-color:#6C757D"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Correggi</button>
-        <button type="submit" class="btn btn-danger" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Conferma</button>
+        
+        <form method="post" action="esito.php">
+          <input type="hidden" name="nome" value="<?php echo $nome ?>">
+          <input type="hidden" name="cognome" value="<?php echo $cognome ?>">
+          <input type="hidden" name="sesso" value="<?php echo $sesso ?>">
+          <input type="hidden" name="nazi" value="<?php echo $nazionalita ?>">
+          <input type="hidden" name="cate" value="<?php if($a==1){echo $cat; } if($a==2){echo $cat1; } ?>">
+          <input type="hidden" name="pass" value="<?php echo $pass ?>">
+          
+          <a href="javascript:history.go(-1)"> <button type="button" class="btn"  style="background-color:#6C757D"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Correggi</button></a>
+         <button type="submit" class="btn btn-danger" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Conferma</button>
+        </form>
+       
       </div>
     
   
-</form>
+
 </body>
 </html>
