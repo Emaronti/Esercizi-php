@@ -80,7 +80,7 @@ $pass=$_REQUEST["pass"];
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$sesso ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nazionalita ?></b><br>
                 <b><?php if($a==1){echo "&nbsp&nbsp&nbsp&nbsp".$cat; } ?></b><br>
-                <b><?php if($a==2){echo "&nbsp&nbsp&nbsp&nbsp".$cat1; } ?></b><br>
+                <b><?php if($a==2){echo "&nbsp&nbsp&nbsp&nbsp".$cat.$cat1; } ?></b><br>
                 </td>
               </tr>
          

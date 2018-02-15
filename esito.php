@@ -5,7 +5,7 @@ $cognome= $_REQUEST["cognome"];
 $sesso= $_REQUEST["sesso"];
 $nazi= $_REQUEST["nazi"];
 $cate= $_REQUEST["cate"];
-$pass= $_REQUEST["pass"];
+$pass1= $_REQUEST["pass"];
 
 $conn="mysql:host=localhost;dbname=Signup";
 $pass="indi1";
@@ -19,7 +19,7 @@ try{
   $query->bindValue(":sesso",$sesso);
   $query->bindValue(":nazionalita",$nazi);
   $query->bindValue(":categoria",$cate);
-  $query->bindValue(":password",$pass);
+  $query->bindValue(":password",$pass1);
   
   if(!$query->execute())
     $a=1;
@@ -49,10 +49,10 @@ try{
           <?php
         
         if($a==1)
-          echo "Riuscito";
+          echo "Non Riuscito";
         
         else if($a==2)
-          echo "Non riuscito";
+          echo "Riuscito";
         
         ?>
         
