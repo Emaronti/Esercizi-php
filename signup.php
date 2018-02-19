@@ -70,17 +70,19 @@ $pass=$_REQUEST["pass"];
               Nome:<br>
               Sesso:<br>
               Nazionalita:<br>
-              <?php if($a!=0){echo "Patente:"; } ?>
+              <?php if($a!=0){echo "Patente:<br>"; } ?>
+              Email:<br>
               </td> 
                 
               <td align="left">
-                <br>
+                
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$cognome ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nome ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$sesso ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nazionalita ?></b><br>
-                <b><?php if($a==1){echo "&nbsp&nbsp&nbsp&nbsp".$cat; } ?></b><br>
-                <b><?php if($a==2){echo "&nbsp&nbsp&nbsp&nbsp".$cat.$cat1; } ?></b><br>
+                <b><?php if($a==1){echo "&nbsp&nbsp&nbsp&nbsp".$cat."</b><br>"; } ?>
+                <b><?php if($a==2){echo "&nbsp&nbsp&nbsp&nbsp".$cat."&nbsp&nbsp&nbsp".$cat1."</b><br>"; } ?>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$email ?></b><br>
                 </td>
               </tr>
          
@@ -99,8 +101,9 @@ $pass=$_REQUEST["pass"];
           <input type="hidden" name="cognome" value="<?php echo $cognome ?>">
           <input type="hidden" name="sesso" value="<?php echo $sesso ?>">
           <input type="hidden" name="nazi" value="<?php echo $nazionalita ?>">
-          <input type="hidden" name="cate" value="<?php if($a==1){echo $cat; } if($a==2){echo $cat1; } ?>">
+          <input type="hidden" name="cate" value="<?php if($a==1){echo $cat; } if($a==2){echo $cat." &nbsp ".$cat1; } ?>">
           <input type="hidden" name="pass" value="<?php echo $pass ?>">
+          <input type="hidden" name="email" value="<?php echo $email ?>">
           
           <a href="javascript:history.go(-1)"> <button type="button" class="btn"  style="background-color:#6C757D"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Correggi</button></a>
          <button type="submit" class="btn btn-danger" value="Submit"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Conferma</button>

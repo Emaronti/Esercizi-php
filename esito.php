@@ -6,6 +6,7 @@ $sesso= $_REQUEST["sesso"];
 $nazi= $_REQUEST["nazi"];
 $cate= $_REQUEST["cate"];
 $pass1= $_REQUEST["pass"];
+$email=$_REQUEST["email"];
 
 $conn="mysql:host=localhost;dbname=Signup";
 $pass="indi1";
@@ -13,13 +14,14 @@ $user="root";
 try{
   $dbh=new PDO($conn,$user,$pass);
   $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-  $query= $dbh->prepare("insert into Utenti(nome,cognome,sesso,nazionalita,categoria,password) values(:nome,:cognome,:sesso,:nazionalita,:categoria,:password)");
+  $query= $dbh->prepare("insert into Utenti(nome,cognome,sesso,nazionalita,categoria,password,email) values(:nome,:cognome,:sesso,:nazionalita,:categoria,:password,:email)");
   $query->bindValue(":nome",$nome);
   $query->bindValue(":cognome",$cognome);
   $query->bindValue(":sesso",$sesso);
   $query->bindValue(":nazionalita",$nazi);
   $query->bindValue(":categoria",$cate);
   $query->bindValue(":password",$pass1);
+  $query->bindValue(":email",$email);
   
   if(!$query->execute())
     $a=1;
@@ -49,23 +51,24 @@ try{
           <?php
         
         if($a==1)
-          echo "Non Riuscito";
+          echo "<h2 align='center' >Dati non correttamente registrati</h2>";
         
         else if($a==2)
-          echo "Riuscito";
+          echo "<h2 align='center' >Dati correttamente registrati</h2>";
         
         ?>
         
 
       </div>
-        </div>
-      <div class="panel-footer" align="center"  style="background-color:gold;width:900px">
-
-        
-       
-        </form>
-       
+      
+      
+       <div class="panel-footer" align="center"  style="background-color:gold;width:900px">
+      
+       <a href="index.html"> <button type="button" class="btn"  style="background-color:white"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Chiudi</button></a>
+         
       </div>
+     </div>
+     
   
 </body>  
 </html>

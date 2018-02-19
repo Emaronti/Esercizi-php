@@ -9,6 +9,24 @@
     }
   </style>
   
+  <script language="Javascript" type="text/javascript">
+<!-- 
+function testpass(form1){
+  
+  
+  // Verifico che le due password siano uguali, in caso contrario avverto
+  // dell'errore con un Alert
+  if (form1.pass.value !=  form1.pass1.value) {
+    alert("La password inserita non coincide con la prima!")
+    form1.pass.focus()
+    form1.pass.select()
+    return false
+  }
+  return true
+}
+-->
+</script>
+  
 </head>
 
 <body>
@@ -18,7 +36,7 @@
     <div class="panel panel-default" style="background-color:#007BFF"  style="width:900px">
       <div class="panel-heading" style="background-color:#007BFF;width:900px"><h1>Modulo di iscrizione</h1></div>
       <div class="panel-body" style="width:900px">
-        <form action='signup.php' method='post'>
+        <form action='signup.php' method='post' name='form1' onsubmit="return testpass(this)">
           
           Cognome: <input type="text"  class="form-control"  name="cognome" required> 
           <br> 
@@ -45,8 +63,9 @@
           </div> <br>
 
           e-mail: <input type="text" class="form-control" size="35" name="email" required> <br>
-          Password: <input type="password" class="form-control" size="35" name="pass"  required>
           
+          Password: <input type="password" class="form-control" size="35" name="pass"  required><br>
+          Conferma password: <input type="password" class="form-control" size="35" name="pass1"  required>
         
 
       </div>
