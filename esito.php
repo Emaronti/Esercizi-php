@@ -64,7 +64,7 @@ try{
       
        <div class="panel-footer" align="center"  style="background-color:gold;width:900px">
       
-       <a href="index.html"> <button type="button" class="btn"  style="background-color:white"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Chiudi</button></a>
+       <a href="index.php"> <button type="button" class="btn"  style="background-color:white"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Chiudi</button></a>
          
       </div>
      </div>
