@@ -14,7 +14,7 @@ $user="root";
 try{
   $dbh=new PDO($conn,$user,$pass);
   $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-  $query= $dbh->prepare("insert into Utenti(nome,cognome,sesso,nazionalita,categoria,password,email) values(:nome,:cognome,:sesso,:nazionalita,:categoria,:password,:email)");
+  $query= $dbh->prepare("insert into Utenti(nome,cognome,sesso,nazionalita,categoria,password,email) values(:nome,:cognome,:sesso,:nazionalita,:categoria,MD5(:password),:email)");
   $query->bindValue(":nome",$nome);
   $query->bindValue(":cognome",$cognome);
   $query->bindValue(":sesso",$sesso);

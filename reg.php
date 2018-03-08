@@ -62,7 +62,7 @@ function testpass(form1){
             <label><input type="checkbox" name="cat1" value="categ. B">Cat. B</label>
           </div> <br>
 
-          e-mail: <input type="text" class="form-control" size="35" name="email" required> <br>
+          e-mail: <input type="email" class="form-control" size="35" name="email" required> <br>
           
           Password: <input type="password" class="form-control" size="35" name="pass"  required><br>
           Conferma password: <input type="password" class="form-control" size="35" name="pass1"  required>

@@ -2,10 +2,12 @@
 session_start();
 if(!isset($_SESSION['email'])){
   if(!isset($_REQUEST['email'])){
-    header('Location:index.html');
+    
+    header('Location:index.php');
   }
 
   else if(isset($_REQUEST['email'])){
+    
     $conn="mysql:host=localhost;dbname=Signup";
     $pass="indi1";
     $user="root";
@@ -18,13 +20,15 @@ if(!isset($_SESSION['email'])){
     $query->bindValue(":email",$_REQUEST['email']);
     $query->execute();
     if($query->rowCount()>0){
+      $_SESSION['msg']="";
       $row=$query->fetch();
       $_SESSION['email']=$row['email'];
       $_SESSION['nome']=$row['nome'];
       $_SESSION['cognome']=$row['cognome'];
     }
     else if($query->rowCount()==0){
-      header('Location:index.html');  
+      $_SESSION['msg']="<h3>Errore! Email o password sbagliata.</h3>";
+      header('Location:index.php');  
     }
 
   }catch(PDOException $e){
@@ -41,7 +45,7 @@ if(!isset($_SESSION['email'])){
   
   <body>
     <h1>
-      Benvenuto <?php echo $_SESSION['email'];?> !
+    <a href="index.php">Benvenuto <?php echo $_SESSION['email'];?> !</a>  
     </h1>
   </body>
   
