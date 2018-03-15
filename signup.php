@@ -10,21 +10,7 @@ $sesso=$_REQUEST["gender"];
 
 $nazionalita=$_REQUEST["nazionalita"];
 
-if(isset($_REQUEST["cat"]) and isset($_REQUEST["cat1"])){
-$cat=$_REQUEST["cat"];
-$cat1=$_REQUEST["cat1"];
-$a=2;
-}
 
-else if(isset($_REQUEST["cat"])){
-$cat=$_REQUEST["cat"];
-$a=1;
-}
-
-else if(isset($_REQUEST["cat1"])){
-$cat=$_REQUEST["cat1"];
-$a=1;
-}
 
 $email=$_REQUEST["email"];
 
@@ -80,8 +66,7 @@ $pass=$_REQUEST["pass"];
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nome ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$sesso ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nazionalita ?></b><br>
-                <b><?php if($a==1){echo "&nbsp&nbsp&nbsp&nbsp".$cat."</b><br>"; } ?>
-                <b><?php if($a==2){echo "&nbsp&nbsp&nbsp&nbsp".$cat."&nbsp&nbsp&nbsp".$cat1."</b><br>"; } ?>
+                
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$email ?></b><br>
                 </td>
               </tr>
@@ -101,7 +86,7 @@ $pass=$_REQUEST["pass"];
           <input type="hidden" name="cognome" value="<?php echo $cognome ?>">
           <input type="hidden" name="sesso" value="<?php echo $sesso ?>">
           <input type="hidden" name="nazi" value="<?php echo $nazionalita ?>">
-          <input type="hidden" name="cate" value="<?php if($a==1){echo $cat; } if($a==2){echo $cat." &nbsp ".$cat1; } ?>">
+          
           <input type="hidden" name="pass" value="<?php echo $pass ?>">
           <input type="hidden" name="email" value="<?php echo $email ?>">
           

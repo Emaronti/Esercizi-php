@@ -6,7 +6,7 @@
       }
       .login,.registra,.dashboard,.logout{
         position:relative;
-        left:44%
+        left:44%;
       }
       a{
         text-decoration:none;
@@ -18,6 +18,12 @@
         left:43%;
         color:red;
       }
+      
+      body{
+        font-family: 'Lato', sans-serif;
+	      background: #353535;
+      }
+      
     </style>
     
   </head>
@@ -30,9 +36,23 @@
     </div>
     
     <div class="bottoni">
-    <a href="login.php"><button class="login">Login</button></a>   
-    <a href="reg.php"> <button class="registra"> Register</button></a> 
+     <a href="login.php"><button class="login">Login</button></a>  
+     <a href="reg.php"> <button class="registra"> Register</button></a> 
      <a href="dashb.php"><button class="dashboard">Dashboard</button></a> 
+    </div>
+      
+     
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       <?php 
       
