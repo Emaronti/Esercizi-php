@@ -4,13 +4,19 @@ $cognome=$_REQUEST["cognome"];
 
 $nome=$_REQUEST["nome"];
 
+if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){
+  $npat=$_REQUEST["npat"];
+  $datasc=$_REQUEST["datasc"];
+}
 
 $sesso=$_REQUEST["gender"];
 
 
 $nazionalita=$_REQUEST["nazionalita"];
 
+$tel=$_REQUEST["tel"]
 
+$datan=$_REQUEST["datan"];
 
 $email=$_REQUEST["email"];
 
@@ -56,7 +62,8 @@ $pass=$_REQUEST["pass"];
               Nome:<br>
               Sesso:<br>
               Nazionalita:<br>
-              <?php if($a!=0){echo "Patente:<br>"; } ?>
+              Telefono:<br>
+              Data Nascita:<br>
               Email:<br>
               </td> 
                 
@@ -66,7 +73,10 @@ $pass=$_REQUEST["pass"];
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nome ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$sesso ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nazionalita ?></b><br>
-                
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$tel ?></b><br>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$datan ?></b><br>
+                <b><?php if(isset($_REQUEST["npat"])){ echo "&nbsp&nbsp&nbsp&nbsp".$npat }?></b><br>
+                <b><?php if(isset($_REQUEST["datasc"])){ echo "&nbsp&nbsp&nbsp&nbsp".$datasc }?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$email ?></b><br>
                 </td>
               </tr>
@@ -86,6 +96,11 @@ $pass=$_REQUEST["pass"];
           <input type="hidden" name="cognome" value="<?php echo $cognome ?>">
           <input type="hidden" name="sesso" value="<?php echo $sesso ?>">
           <input type="hidden" name="nazi" value="<?php echo $nazionalita ?>">
+          
+          <input type="hidden" name="tel" value="<?php echo $tel ?>">          
+          <input type="hidden" name="datan" value="<?php echo $datan ?>">
+          <input type="hidden" name="npat" value="<?php if(isset($_REQUEST["npat"])){ echo $npat } ?>">
+          <input type="hidden" name="npat" value="<?php if(isset($_REQUEST["datasc"])){ echo $datasc } ?>">
           
           <input type="hidden" name="pass" value="<?php echo $pass ?>">
           <input type="hidden" name="email" value="<?php echo $email ?>">

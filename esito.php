@@ -21,8 +21,8 @@ try{
   $query->bindValue(":password",$pass1);
   $query->bindValue(":telefono",$tel);
   $query->bindValue(":data_nascita",$data); //finire
-  $query->bindValue(":sesso",$email);
-  $query->bindValue(":nazionalita",$email);
+  $query->bindValue(":sesso",$sesso);
+  $query->bindValue(":nazionalita",$nazi);
   
   if(!$query->execute())
     $a=1;
