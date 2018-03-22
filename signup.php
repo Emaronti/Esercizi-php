@@ -3,8 +3,11 @@ $a=0;
 $cognome=$_REQUEST["cognome"];
 
 $nome=$_REQUEST["nome"];
+$npat=null;
+$datasc=null;
 
 if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){
+  
   $npat=$_REQUEST["npat"];
   $datasc=$_REQUEST["datasc"];
 }
@@ -14,7 +17,7 @@ $sesso=$_REQUEST["gender"];
 
 $nazionalita=$_REQUEST["nazionalita"];
 
-$tel=$_REQUEST["tel"]
+$tel=$_REQUEST["tel"];
 
 $datan=$_REQUEST["datan"];
 
@@ -69,14 +72,14 @@ $pass=$_REQUEST["pass"];
                 
               <td align="left">
                 
-                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$cognome ?></b><br>
-                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nome ?></b><br>
-                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$sesso ?></b><br>
-                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nazionalita ?></b><br>
-                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$tel ?></b><br>
-                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$datan ?></b><br>
-                <b><?php if(isset($_REQUEST["npat"])){ echo "&nbsp&nbsp&nbsp&nbsp".$npat }?></b><br>
-                <b><?php if(isset($_REQUEST["datasc"])){ echo "&nbsp&nbsp&nbsp&nbsp".$datasc }?></b><br>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$cognome; ?></b><br>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nome; ?></b><br>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$sesso; ?></b><br>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nazionalita; ?></b><br>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$tel; ?></b><br>
+                <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$datan; ?></b><br>
+                <b><?php if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){ echo "&nbsp&nbsp&nbsp&nbspPROVA".$npat."<br>" ;}?></b>
+                <b><?php if(isset($_REQUEST["datasc"]) and ($_REQUEST["npat"])){ echo "&nbsp&nbsp&nbsp&nbsp".$datasc."<br>" ;}?></b>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$email ?></b><br>
                 </td>
               </tr>
@@ -99,8 +102,8 @@ $pass=$_REQUEST["pass"];
           
           <input type="hidden" name="tel" value="<?php echo $tel ?>">          
           <input type="hidden" name="datan" value="<?php echo $datan ?>">
-          <input type="hidden" name="npat" value="<?php if(isset($_REQUEST["npat"])){ echo $npat } ?>">
-          <input type="hidden" name="npat" value="<?php if(isset($_REQUEST["datasc"])){ echo $datasc } ?>">
+          <input type="hidden" name="npat" value="<?php if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){ echo $npat ;} ?>">
+          <input type="hidden" name="datasc" value="<?php if(isset($_REQUEST["datasc"]) and ($_REQUEST["noat"])){ echo $datasc; } ?>">
           
           <input type="hidden" name="pass" value="<?php echo $pass ?>">
           <input type="hidden" name="email" value="<?php echo $email ?>">

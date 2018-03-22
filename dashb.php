@@ -8,13 +8,14 @@ if(!isset($_SESSION['email'])){
 
   else if(isset($_REQUEST['email'])){
     
-    $conn="mysql:host=localhost;dbname=Signup";
+    $conn="mysql:host=localhost;dbname=CarPooling";
     $pass="indi1";
     $user="root";
   try{
     $dbh=new PDO($conn,$user,$pass);
     $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-    $query= $dbh->prepare("select * from Utenti where password=:password and email=:email");
+    
+    $query= $dbh->prepare("select * from Passeggero where password=MD5(:password) and email=:email");  //NON FA MD5
 
     $query->bindValue(":password",$_REQUEST['pass']);
     $query->bindValue(":email",$_REQUEST['email']);

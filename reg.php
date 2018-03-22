@@ -17,8 +17,6 @@
   <script language="Javascript" type="text/javascript">
 
 function testpass(form1){
-  
-  
   // Verifico che le due password siano uguali, in caso contrario avverto
   // dell'errore con un Alert
   if (form1.pass.value !=  form1.pass1.value) {
@@ -88,9 +86,9 @@ function testpass(form1){
           
           Data Nascita: <input type="date" class="form-control" name="datan" required> 
 
-         <div id="npat"><br> Numero Patente <input type="text" class="form-control" size="35" name="npat" required></div>  <br>
+         <div id="npat"><br> Numero Patente <input type="text" class="form-control" size="35" name="npat" ></div>  <br>
           
-          <div id="datasc"> Scadenza Patente <input type="date" class="form-control" name="datasc" required> <br></div> 
+          <div id="datasc"> Scadenza Patente <input type="date" class="form-control" name="datasc"> <br></div> 
           
           e-mail: <input type="email" class="form-control" size="35" name="email" required> <br>
           

@@ -4,23 +4,24 @@ $nome= $_REQUEST["nome"];
 $cognome= $_REQUEST["cognome"];
 $sesso= $_REQUEST["sesso"];
 $nazi= $_REQUEST["nazi"];
-
+$tel=$_REQUEST["tel"];
+$data=$_REQUEST["datan"];
 $pass1= $_REQUEST["pass"];
 $email=$_REQUEST["email"];
 
-$conn="mysql:host=localhost;dbname=Signup";
+$conn="mysql:host=localhost;dbname=CarPooling";
 $pass="indi1";
 $user="root";
 try{
   $dbh=new PDO($conn,$user,$pass);
   $dbh->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-  $query= $dbh->prepare("insert into Passeggero(id_passeggero,cognome,nome,email,password,telefono,data_nascita,sesso,nazionalita) values(:cognome,:nome,:email,:categoria,MD5(:password),:telefono,:data_nascita,:sesso,:nazionalita)");
+  $query= $dbh->prepare("insert into Passeggero(cognome,nome,email,password,telefono,data_nascita,sesso,nazionalita) values(:cognome,:nome,:email,MD5(:password),:telefono,:data_nascita,:sesso,:nazionalita)");
   $query->bindValue(":cognome",$cognome);
   $query->bindValue(":nome",$nome);
   $query->bindValue(":email",$email);
   $query->bindValue(":password",$pass1);
   $query->bindValue(":telefono",$tel);
-  $query->bindValue(":data_nascita",$data); //finire
+  $query->bindValue(":data_nascita",$data);                                                                                                                                                                                                    
   $query->bindValue(":sesso",$sesso);
   $query->bindValue(":nazionalita",$nazi);
   
