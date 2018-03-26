@@ -67,6 +67,8 @@ $pass=$_REQUEST["pass"];
               Nazionalita:<br>
               Telefono:<br>
               Data Nascita:<br>
+              <?php if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){ echo  "Numero Patente<br>";}?>
+              <?php if(isset($_REQUEST["datasc"]) and ($_REQUEST["npat"])){ echo  "Data Scadenza Patente<br>";}?>
               Email:<br>
               </td> 
                 
@@ -103,7 +105,7 @@ $pass=$_REQUEST["pass"];
           <input type="hidden" name="tel" value="<?php echo $tel ?>">          
           <input type="hidden" name="datan" value="<?php echo $datan ?>">
           <input type="hidden" name="npat" value="<?php if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){ echo $npat ;} ?>">
-          <input type="hidden" name="datasc" value="<?php if(isset($_REQUEST["datasc"]) and ($_REQUEST["noat"])){ echo $datasc; } ?>">
+          <input type="hidden" name="datasc" value="<?php if(isset($_REQUEST["datasc"]) and ($_REQUEST["npat"])){ echo $datasc; } ?>">
           
           <input type="hidden" name="pass" value="<?php echo $pass ?>">
           <input type="hidden" name="email" value="<?php echo $email ?>">
