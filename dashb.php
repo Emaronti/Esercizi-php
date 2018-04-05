@@ -27,7 +27,8 @@ if(!isset($_SESSION['email'])){
       $_SESSION['email']=$row['email'];
       $_SESSION['nome']=$row['nome'];
       $_SESSION['cognome']=$row['cognome'];
-      $_SESSION['aut']=0;
+			$_SESSION['idPas']=$row['id_passeggero'];
+      //$_SESSION['aut']=0;
     }
     else if($query->rowCount()==0){
       $query1= $dbh->prepare("select * from Autista where password=:password and email=:email");  
@@ -41,7 +42,8 @@ if(!isset($_SESSION['email'])){
         $_SESSION['email']=$row1['email'];
         $_SESSION['nome']=$row1['nome'];
         $_SESSION['cognome']=$row1['cognome'];
-        $_SESSION['aut']=1;
+				$_SESSION['idAut']=$row['id_autista'];
+        //$_SESSION['aut']=1;
       }
       else if($query1->rowCount()==0){
       $_SESSION['msg']="<h3>Errore! Email o password sbagliata.</h3>";
@@ -94,7 +96,7 @@ if(!isset($_SESSION['email'])){
           <td align="left">
             
             <h1 style="color:white">
-             <a href="aggauto">Aggiunta Macchina</a>          <!-- Fare pagina aggiunta auto -->
+             <a href="aggauto.php">Aggiunta Macchina</a>          <!-- Fare pagina aggiunta auto -->
             </h1>
             
           </td>

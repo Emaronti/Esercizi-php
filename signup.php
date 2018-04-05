@@ -80,7 +80,7 @@ $pass=$_REQUEST["pass"];
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$nazionalita; ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$tel; ?></b><br>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$datan; ?></b><br>
-                <b><?php if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){ echo "&nbsp&nbsp&nbsp&nbspPROVA".$npat."<br>" ;}?></b>
+                <b><?php if(isset($_REQUEST["npat"]) and ($_REQUEST["datasc"])){ echo "&nbsp&nbsp&nbsp&nbsp".$npat."<br>" ;}?></b>
                 <b><?php if(isset($_REQUEST["datasc"]) and ($_REQUEST["npat"])){ echo "&nbsp&nbsp&nbsp&nbsp".$datasc."<br>" ;}?></b>
                 <b><?php echo "&nbsp&nbsp&nbsp&nbsp".$email ?></b><br>
                 </td>
