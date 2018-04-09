@@ -22,7 +22,8 @@ $user="root";
   $query->bindValue(":modello",$modello);
   $query->bindValue(":cilindrata",$cilindrata);
   $query->bindValue(":potenza",$potenza);
-  $query->bindValue(":idaut",$idAut);                                                                                                                                                                                                    
+  $query->bindValue(":idaut",$idaut);                                                                                                                                                                                                    
+  $query->execute();  
 
   header("location:dashb.php");
 

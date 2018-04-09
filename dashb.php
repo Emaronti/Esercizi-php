@@ -42,7 +42,7 @@ if(!isset($_SESSION['email'])){
         $_SESSION['email']=$row1['email'];
         $_SESSION['nome']=$row1['nome'];
         $_SESSION['cognome']=$row1['cognome'];
-				$_SESSION['idAut']=$row['id_autista'];
+				$_SESSION['idAut']=$row1['id_autista'];
         //$_SESSION['aut']=1;
       }
       else if($query1->rowCount()==0){
@@ -95,16 +95,20 @@ if(!isset($_SESSION['email'])){
         <tr>
           <td align="left">
             
-            <h1 style="color:white">
-             <a href="aggauto.php">Aggiunta Macchina</a>          <!-- Fare pagina aggiunta auto -->
-            </h1>
+          <?php if(isset($_SESSION['idAut'])){ echo '<h1 style="color:white">
+             <a href="aggauto.php">Aggiunta Macchina</a>         
+            </h1>'; } ?>
             
           </td>
           <td width="20%"></td>
           <td align="center">
-            <h1 style="color:white">
-              Prenotazione
-            </h1>
+					<?php	if(isset($_SESSION['idAut'])){
+							echo '<h1 style="color:white"><a href="aggviaggio.php">Aggiunta Viaggio</a></h1>';	} 
+								else if(isset($_SESSION['idPas'])){
+									echo '<h1 style="color:white"><a href="aggpren.php">Prenotazione</a></h1>';	
+								}						
+						?>
+            
           </td>
           <td width="20%"></td>
           <td align="right">
