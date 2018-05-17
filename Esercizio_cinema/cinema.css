@@ -1,0 +1,15 @@
+.listaF{
+  background-color:coral;
+  margin-top:200px;
+  padding-bottom:400px;
+  width:50%;
+  margin-left:450px;
+  border-radius:25px;
+}
+#listf{
+  font-weight:bold;
+  font-family:Arial Black;
+}
+html{
+  background-color:#FFBD93;
+}
