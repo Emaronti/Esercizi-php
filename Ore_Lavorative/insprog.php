@@ -1,9 +1,9 @@
 <?php
 
 session_start();
-	$servername = "192.168.55.9";
+	$servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "indi1";
 	
 	
 	$nome=$_REQUEST['nomeprogetto'];

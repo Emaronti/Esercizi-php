@@ -2,9 +2,9 @@
 session_start();
 
 	date_default_timezone_set('Europe/Rome');
-	$servername = "192.168.55.9";
+	$servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "indi1";
 	
 	$conn=mysqli_connect($servername,$username,$password) or die ("could not connect to mysql");
 	
@@ -64,7 +64,7 @@ session_start();
 				$sql2='select nome,descrizione,idTipo_Pro,AnnoStart,pro_commessa from progetto ';
 				$result2=mysqli_query($conn,$sql2);
 				$n=mysqli_num_rows($result2);
-				for($i=2;$i<=$n;$i++){
+				for($i=1;$i<=$n;$i++){
 					
 					$sql3="select nome,descrizione,idTipo_Pro,AnnoStart,pro_commessa from progetto  where idProgetto='$i' order by pro_commessa desc";
 					$result3=mysqli_query($conn,$sql3);

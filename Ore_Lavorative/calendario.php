@@ -1,8 +1,8 @@
 <?php
 session_start();
-$servername = "192.168.55.9";
+  $servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "indi1";
 	
 	$conn=mysqli_connect($servername,$username,$password) or die ("could not connect to mysql");
 	

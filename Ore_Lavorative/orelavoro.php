@@ -2,9 +2,9 @@
 session_start();
 
 	date_default_timezone_set('Europe/Rome');
-	$servername = "192.168.55.9";
+	$servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "indi1";
 	
 	$conn=mysqli_connect($servername,$username,$password) or die ("could not connect to mysql");
 	
@@ -246,7 +246,7 @@ else{
 
 
 
-<form action="<?php/*
+<form action="<?php
 			if(isset($_REQUEST['utenti2']) && isset($_REQUEST['data1'])){
 					$utenti3=$_REQUEST['utenti2'];
 					$_SESSION['u3']=$utenti3;
@@ -293,6 +293,6 @@ else{
 				<input type='submit' id='logout'  value='Modifica'>
 				";
 					 }
-				 }*/?>
+				 }?>
 					
 			</form>-->
