@@ -112,8 +112,10 @@ $utente=1;
 	$db=mysqli_select_db($conn,'orelavorative') or die ("no database");
 	
 	$username=$_SESSION['username'];
+            
 	
 		for($i=1;$i<=$nd;$i++){
+      
 			$sql="select Amministratori from amm where idUtente=$id";
 			$result=mysqli_query($conn,$sql);
 			$sql1="select Commerciale from commerc where idUtente=$id";
@@ -183,72 +185,68 @@ $utente=1;
 			for($v=0;$v<mysqli_num_rows($result);$v++){	
 				if($arr[$v][5]=='Gnl'){
 					$art=1;
+          echo "AAAAAA";
 				}
 				else if($arr[$v][5]=='Gl'){
 					$art1=1;
+          echo"bbbbbbbbbbbbbb";
 				}
 				else if($arr[$v][5]=='Permesso'){
 					$art2=1;
+          echo"cccccccccc";
 				}
 				else if($arr[$v][5]=='Trasferta'){
 					$art3=1;
+          echo"ddddddddd";
 				}
 				else if($arr[$v][5]=='Ferie'){
 					$art4=1;
+          echo"dddddddd";
 				}
 				else if($arr[$v][5]=='Malattia'){
 					$art5=1;
+          echo"eeeeeeeee";
 				}
 			}
 			
 				if($art==1 && $art1==0 && $art2==0 && $art3==0 && $art4==0 && $art5==0)// NON LAV
 				{
 					echo "#fcfc6b";
-					
 				}
 				else if($art==0 && $art1==1 && $art2==0 && $art3==0 && $art4==0 && $art5==0) //LAV
 				{
 					echo "white";
-					
 				}
 				else if($art==0 && $art1==0 && $art2==1 && $art3==0 && $art4==0 && $art5==0)//PERMESSI
 				{
-					echo "#c8975f";
-					
+					echo "#c8975f";	
 				}
 				else if($art==0 && $art1==0 && $art2==0 && $art3==1 && $art4==0 && $art5==0)//TRASFERTA
 				{
 					echo "#a6fea6";
-					
 				}
 				else if($art==0 && $art1==0 && $art2==0 && $art3==0 && $art4==1 && $art5==0)//FERIE
 				{
 					echo "green";
-					
 				}
 				else if($art==0 && $art1==0 && $art2==0 && $art3==0 && $art4==0 && $art5==1)//MALATTIA
 				{
-					echo "#c868fc";
-					
+					echo "#c868fc";	
 				}
 				else if($art==0 && $art1==1 && $art2==1 && $art3==0 && $art4==0 && $art5==0)//LAV + PERM
 				{
-					echo "#c8975f";
-					
+					echo "#c8975f";			
 				}
 				else if($art==0 && $art1==1 && $art2==0 && $art3=1 && $art4==0 && $art5==0)//LAV + TRASF
 				{
-					echo "#a6fea6";
-					
+					echo "#a6fea6";	
 				}
 				else if($art==0 && $art1==1 && $art2==1 && $art3==1 && $art4==0 && $art5==0)//LAV + PERM + TRASF
 				{
 					echo "#a6fea6";
-					
 				}
 				
-			
-			echo  ";border:1px solid black'>".$i."<p>";for($u=0;$u<mysqli_num_rows($result);$u++){
+			echo  "border:1px solid black'>".$i."<p>";for($u=0;$u<mysqli_num_rows($result);$u++){
 				
 				if($arr[$u][5]=='Trasferta' || $arr[$u][5]=='Gl'){
 				echo $arr[$u][1]."<br>Ore:".$arr[$u][3]."<br>".$arr[$u][4]."<hr width='100px'>"; 
@@ -299,17 +297,10 @@ $utente=1;
  
 <link rel="stylesheet" type="text/css" href="homepage.css" />
 
- <script type='text/javascript'>
- 
-	
-	
+ <script type='text/javascript'>	
 	$(document).ready(function(){	
 		$('[data-toggle="tooltip"]').tooltip();		
 	});
-	
-	
-
-	
  </script>
  </html>
  

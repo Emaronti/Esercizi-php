@@ -158,7 +158,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=1 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=1 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -195,7 +195,7 @@ session_start();
 	}
 	}
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=2 and year(data)=$anno  and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=2 and year(data)=$anno  and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -229,7 +229,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=3 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=3 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -265,7 +265,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=4 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=4 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -301,7 +301,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=5 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=5 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -337,7 +337,7 @@ session_start();
 	
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=6 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=6 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -372,7 +372,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=7 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=7 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -406,7 +406,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=8 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=8 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -440,7 +440,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=9 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=9 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -474,7 +474,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=10 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=10 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -508,7 +508,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=11 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=11 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -542,7 +542,7 @@ session_start();
 	}
 	
 	for($i=0;$i<=$k[0]+$z;$i++){
-	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=12 and year(data)=$anno and idProgetto='$i'+2";
+	$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$ut' and month(data)=12 and year(data)=$anno and idProgetto='$i'+1";
 	$result9=mysqli_query($conn,$sql9);
 	$dati9 = mysqli_fetch_array($result9);
 	$sql10="select nome from progetto where idProgetto='$i'+1 ";
@@ -621,7 +621,8 @@ session_start();
 		echo "<tr><td>$ar[0]</td>";
 		for($j=0;$j<=$k[0]+$z;$j++){
 			
-		$sql9="select sum(ore) from data inner join uten on data.idUtente=uten.idUtente where idUten='$i' and  idProgetto='$j'+1";
+		$sql9="SELECT sum( data.ore )FROM data INNER JOIN utente ON data.idUtente = utente.idUtente INNER JOIN uten ON utente.idUtente = uten.idUtente WHERE idUten ='$i' AND idProgetto ='$j'+1";
+      
 		$result9=mysqli_query($conn,$sql9);
 		$dati9 = mysqli_fetch_array($result9);
 		

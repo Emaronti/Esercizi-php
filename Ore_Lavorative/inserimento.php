@@ -91,11 +91,13 @@ else{
 			
 			<select name='progetto' id='bott3' required>
 			<?php 
+        
 				$sql1='select nome from progetto ';
 				$result1=mysqli_query($conn,$sql1);
 				$n=mysqli_num_rows($result1);
-				for($i=2;$i<=$n;$i++){
-				$sql="select idProgetto,nome from progetto where idProgetto='$i'";
+				for($i=1;$i<=$n;$i++){
+         
+				$sql="select idProgetto, nome from progetto where idProgetto='$i'";
 				$result=mysqli_query($conn,$sql);
 				$ar=mysqli_fetch_array($result);
 				if($ar[1]!==NULL)
