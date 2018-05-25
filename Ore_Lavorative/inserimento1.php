@@ -44,7 +44,7 @@
 	else if($minuti==45)
 		$ore=$ore.".75";
 		
-if($giornata==1 || $giornata==4 || $giornata==5){
+if($giornata==2 || $giornata==3 || $giornata==5){
 	
 	if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){
 	
@@ -61,7 +61,7 @@ if($giornata==1 || $giornata==4 || $giornata==5){
 	
 	}
 	
-else if($giornata==3)	{
+else if($giornata==6)	{
 	
 	if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){		
 	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (1,'$arre[0]','$data','$ore', 'Non significativa', '$giornata', 'Non significativa')";
@@ -75,7 +75,7 @@ else if($giornata==3)	{
 	}
 	
 }
-else if($giornata==6 || $giornata==2){
+else if($giornata==1 || $giornata==4){
 	
 if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){		
 	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES ('$nome_p','$arre[0]','$data','$ore', '$luogo', '$giornata', '$descrizione')";

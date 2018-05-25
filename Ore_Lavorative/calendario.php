@@ -16,7 +16,7 @@ $id=$_SESSION['idU'];
 </head>
 <table id='table1' align='center' >
 	<tr align='center'>
-		<td><img   id='bott' src='http://192.168.55.9/Stage/Logo Tecnau/LOGO_Tecnau_Definitivo.png'  height='100' width='433'>
+		<td><img   id='bott' src='http://www.tecnau.it/wp-content/uploads/2016/07/Logo_definitivo_trasparente_HD.png'  height='100' width='433'>
 		</td>
 		<td valign="top"><h2 id='h3' style='margin-top:20px;margin-bottom:0px'>Calendario</h2>
 		 <form action='calendario.php'  method='post'>
@@ -24,7 +24,8 @@ $id=$_SESSION['idU'];
 				$result=mysqli_query($conn,$sql);
 				$sql1="select Commerciale from commerc where idUtente=$id";
 				$result1=mysqli_query($conn,$sql1);
-				if(mysqli_num_rows($result)>0 || mysqli_num_rows($result1)>0){		 ?>
+				if(mysqli_num_rows($result)>0 || mysqli_num_rows($result1)>0){
+       ?>
 		 <strong>Inserisci utente</strong>
 		 
 

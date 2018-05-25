@@ -48,7 +48,7 @@ else{
 </head>
 <table id='table1' align='center' >
 	<tr align='center'>
-		<td><img   id='bott' src='http://192.168.55.9/Stage/Logo Tecnau/LOGO_Tecnau_Definitivo.png'  height='100' width='433'>
+		<td><img   id='bott' src='http://www.tecnau.it/wp-content/uploads/2016/07/Logo_definitivo_trasparente_HD.png'  height='100' width='433'>
 		</td>
 		<td valign="bottom"><h2 id='h3' style='margin-bottom:33px;'>Inserimento</h2>
 		</td>
@@ -80,11 +80,11 @@ else{
 			
 			<tr><th align='right'><strong>Tipo di giornata:</strong></th><th align='left'>
 			<select  id='bott2' onchange='tipog()' name='giornata'   required >
-				  <option value='6'>Lavoro</option>  
-				  <option value='2'>Trasferta</option>
-				  <option value='3'>Permessi</option>
-				  <option value='4'>Malattia</option>
-				  <option value='1'>Ferie</option>
+				  <option value='1'>Lavoro</option>  
+				  <option value='4'>Trasferta</option>
+				  <option value='6'>Permessi</option>
+				  <option value='5'>Malattia</option>
+				  <option value='3'>Ferie</option>
 			</select></th></tr>
 			<br>
 			<tr><th align='right'><strong>Tipo di impiego:</strong> </th><th align='left'>

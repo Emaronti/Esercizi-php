@@ -27,7 +27,6 @@
     $nd=date('t',mktime(0,0,0,$mn,1,(int) $yn));
     
     $j= date('w',mktime(0,0,0,$mn,1,(int) $yn))-1;
-	
     if($j=="-1"){$j="6";}
     $MONTHS=array(1=>'Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre');
     for($k=1;$k<=$j;$k++){$adj.="<td> </td>";}
@@ -129,7 +128,7 @@ $utente=1;
 			
 			else{
 				
-			$sql="select  utente.Username, progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto inner join utente on data.idUtente=utente.idUtente inner join uten on data.idUtente=uten.idUtente where data.data='$yn-$mn-$i' and utente.Username='$username';";
+			$sql="select utente.Username, progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto inner join utente on data.idUtente=utente.idUtente inner join uten on data.idUtente=uten.idUtente where data.data='$yn-$mn-$i' and utente.Username='$username';";
 			$result=mysqli_query($conn,$sql);
 			}
 			
@@ -167,6 +166,7 @@ $utente=1;
 			echo $adj."<td align='center' class='hoverlink' data-toggle='tooltip' title='".$arr[0][2]." &#13 ";
 			$var='';
 			for($r=0;$r<mysqli_num_rows($result);$r++){
+        
 			if($arr[$r][1]!='Non significativo')	
 			$var=$var."    ".$arr[$r][1];
 			}
@@ -183,34 +183,35 @@ $utente=1;
 			echo  "' width='157'  style='background-color:";
 			
 			for($v=0;$v<mysqli_num_rows($result);$v++){	
+          
 				if($arr[$v][5]=='Gnl'){
-					$art=1;
-          echo "AAAAAA";
+					$art=1;         
 				}
 				else if($arr[$v][5]=='Gl'){
 					$art1=1;
-          echo"bbbbbbbbbbbbbb";
+          
 				}
 				else if($arr[$v][5]=='Permesso'){
 					$art2=1;
-          echo"cccccccccc";
+          
 				}
 				else if($arr[$v][5]=='Trasferta'){
 					$art3=1;
-          echo"ddddddddd";
+          
 				}
 				else if($arr[$v][5]=='Ferie'){
 					$art4=1;
-          echo"dddddddd";
+          
 				}
 				else if($arr[$v][5]=='Malattia'){
 					$art5=1;
-          echo"eeeeeeeee";
+          
 				}
 			}
-			
+			  
+        
 				if($art==1 && $art1==0 && $art2==0 && $art3==0 && $art4==0 && $art5==0)// NON LAV
-				{
+				{   
 					echo "#fcfc6b";
 				}
 				else if($art==0 && $art1==1 && $art2==0 && $art3==0 && $art4==0 && $art5==0) //LAV
@@ -223,8 +224,8 @@ $utente=1;
 				}
 				else if($art==0 && $art1==0 && $art2==0 && $art3==1 && $art4==0 && $art5==0)//TRASFERTA
 				{
-					echo "#a6fea6";
-				}
+          echo "#a6fea6";
+        }
 				else if($art==0 && $art1==0 && $art2==0 && $art3==0 && $art4==1 && $art5==0)//FERIE
 				{
 					echo "green";
@@ -246,7 +247,7 @@ $utente=1;
 					echo "#a6fea6";
 				}
 				
-			echo  "border:1px solid black'>".$i."<p>";for($u=0;$u<mysqli_num_rows($result);$u++){
+			echo  "';border:1px solid black'>".$i."<p>";for($u=0;$u<mysqli_num_rows($result);$u++){
 				
 				if($arr[$u][5]=='Trasferta' || $arr[$u][5]=='Gl'){
 				echo $arr[$u][1]."<br>Ore:".$arr[$u][3]."<br>".$arr[$u][4]."<hr width='100px'>"; 

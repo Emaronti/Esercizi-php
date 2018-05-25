@@ -10,7 +10,7 @@ $_SESSION['a']=null;
 <body>
 
 <div  align='center'>	
-	<img   id='bott8' src='http://192.168.55.9/Stage/Logo Tecnau/LOGO_Tecnau_Definitivo.png'  height="150" width="533" >
+	<img   id='bott8' src='http://www.tecnau.it/wp-content/uploads/2016/07/Logo_definitivo_trasparente_HD.png'  height="150" width="533" >
 	
 	<h1>Portale Ore Lavorative</h1>
 </div> 
