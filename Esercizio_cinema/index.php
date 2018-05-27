@@ -25,6 +25,9 @@
     </div>
     <div class="panel-footer">
       <button class="btn-default" id="btn">Cerca</button>
+      <select id="sel">
+       
+      </select>
     </div>
   </div>
      <br><br><br><br>
