@@ -4,7 +4,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="cinema.css" type="text/css" />
-    <script type="text/javascript" src="cinemajs.js"></script>
+    <script type="text/javascript" src="scriptCinema.js"></script>
   </head>
   
   <body>
@@ -18,9 +18,11 @@
     <div class="panel-heading" >Elenco Cinema</div>
     <div class="panel-body" id="elc">
       <table id="tabe"  class="table table-hover" align="center"   >
+        <thead>
           <tr><th>Nome Cinema</th><th>Posti</th><th>Citta</th></tr>
-        
-          
+        </thead>
+        <tbody>
+        </tbody>
       </table>  
     </div>
     <div class="panel-footer">
@@ -35,9 +37,13 @@
  <div class="panel panel-info" style="width:500px;margin:auto">
     <div class="panel-heading" >Elenco Film</div>
     <div class="panel-body" id="elc">
-      <table id="tabe1"  class="table table-hover" align="center"   >
+      <table id="tabe1"  class="table" align="center"   >
+        <thead class="thead-dark">
           <tr><th>Titolo</th><th>Anno Produzione</th><th>Genere</th></tr>
-        
+        </thead>
+          
+         <tbody>
+        </tbody>
           
       </table>  
     </div>
