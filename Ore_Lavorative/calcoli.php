@@ -77,38 +77,38 @@ echo "<div align='center'><strong>Ore complessive: ".$g[0]."</strong></div><br>"
 <table border='1' align='center'>
 <tr><th>Ore complessive</th><th>Totale</th></tr>
 <?php
- $sql2="select sum(ore) from data where idUtente=$id and idTipo=2 ";	
+ $sql2="select sum(ore) from data where idUtente=$id and idTipo=4 ";	
  $result2=mysqli_query($conn,$sql2);
 $dati1 = mysqli_fetch_array($result2);
  echo "<tr>";
 
-	echo "<td>Trasferta</td><td>".$dati1[0]."</td> ";
+	echo "<td>Trasferta</td><td>".$dati1[0]." ore</td> ";
 	
 echo "</tr>";	
-$sql3="select sum(ore) from data where idUtente=$id and idTipo=3 ";	
+$sql3="select sum(ore) from data where idUtente=$id and idTipo=6 ";	
  $result3=mysqli_query($conn,$sql3);
 $dati2 = mysqli_fetch_array($result3);
  echo "<tr>";
 
-	echo "<td>Permessi</td><td>".$dati2[0]."</td> ";
+	echo "<td>Permessi</td><td>".$dati2[0]." ore</td> ";
 	
 echo "</tr>";	
 
-$sql4="select count(*) from data where idUtente=$id and idTipo=4 ";	
+$sql4="select count(*) from data where idUtente=$id and idTipo=5 ";	
  $result4=mysqli_query($conn,$sql4);
 $dati3 = mysqli_fetch_array($result4);
 
  echo "<tr>";
 
-	echo "<td>Malattia</td><td>".$dati3[0]."</td> ";
+	echo "<td>Malattia</td><td>".$dati3[0]." giorni</td> ";
 	
 echo "</tr>";
-$sql5="select count(*) from data where idUtente=$id and idTipo=5 ";	
+$sql5="select count(*) from data where idUtente=$id and idTipo=3 ";	
  $result5=mysqli_query($conn,$sql5);
 $dati4 = mysqli_fetch_array($result5);
  echo "<tr>";
 
-	echo "<td>Ferie</td><td>".$dati4[0]."</td> ";
+	echo "<td>Ferie</td><td>".$dati4[0]." giorni</td> ";
 	
 echo "</tr>";
 

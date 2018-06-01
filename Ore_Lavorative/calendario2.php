@@ -82,7 +82,7 @@
 	?>
 	</table>
 </div>
-<div  align="center" style='margin-left:15%'>
+<div  style='margin-left:25%'>
 	<form action='inscomm.php' method='post'>
 		<label><strong align="left" style='color:#0c4977; font-size:20px'>Inserimento commesse</strong></label>
 		<br><br>

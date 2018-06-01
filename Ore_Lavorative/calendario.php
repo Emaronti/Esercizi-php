@@ -13,6 +13,7 @@ $id=$_SESSION['idU'];
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="homepage.css" />
+  <meta charset="utf-8">
 </head>
 <table id='table1' align='center' >
 	<tr align='center'>

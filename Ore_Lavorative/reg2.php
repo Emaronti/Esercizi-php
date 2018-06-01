@@ -44,7 +44,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	  {
 		$db=mysqli_select_db($conn,'orelavorative') or die ("no database");
 		
-		$tipo=$_REQUEST['tipoutente'];
+      if(isset($_REQUEST['tipoutente'])==false){
+        $tipo="Dipendente";
+        
+      }
+      else{
+        $tipo=$_REQUEST['tipoutente'];
+      }
+		
 		
 		if($tipo=="Amministratore"){
 		$sql="INSERT INTO utente (Username, Password) VALUES ('$username','$password')";
@@ -82,7 +89,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$result1=mysqli_query($conn,$sql1);
 		$sql3="INSERT INTO ore_totali (idUtente, Extra_ore) VALUES ('$ar[0]',0)";
 		$result3=mysqli_query($conn,$sql3);
-		header("location: dipendenti.php");
+      if(isset($_REQUEST['tipoutente'])==false){
+        header("location:homepage.php");
+       }
+      else{
+       header("location: dipendenti.php");
+      }
+		
 		}
 		
 	  }

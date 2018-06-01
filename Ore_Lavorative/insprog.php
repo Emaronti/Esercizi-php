@@ -20,7 +20,7 @@ session_start();
 	if(mysqli_num_rows($y)>0){
 		
 	$_SESSION['msg']="<div id='span' align ='center'>Progetto già esistente.</div>";
-	header ('location: inserimento2.php') ;			
+	header ('location: inserimento2.php');			
 	}
 	else{
 	$sql="insert into progetto (nome,descrizione) values ('$nome','$desc')";
