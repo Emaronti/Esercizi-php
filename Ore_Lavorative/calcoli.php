@@ -21,16 +21,16 @@
 	
 	$username=$_SESSION['username'];
 	
-	for($i=0;$i<100;$i++){
-	$sql="select nome,sum(ore)  from data inner join progetto on data.idProgetto=progetto.idProgetto  inner join utente on data.idUtente=utente.idUtente where Username='$username' and data.idProgetto=$i;";
+	//for($i=0;$i<100;$i++){
+	$sql="select sum(ore)  from data inner join utente on data.idUtente=utente.idUtente where utente.Username='$username';";
 	$result=mysqli_query($conn,$sql);
 	$a=mysqli_fetch_array($result,MYSQLI_NUM);
-	if($a[1]==null){
-		$a[1]=0;
+	if($a[0]==null){
+		$a[0]=0;
 	}
-	$sql1="update ore_totali set Ore_totali='$a[1]' where id_tot=$i;";
+	$sql1="update ore_totali set Ore_totali='$a[0]' inner join utente on ore_totali.idUtente=utente.idUtente where utente.Username='$username';";  //andare a togliere la colonna idProgetto da ore_totali poiché inutile
 	$result1=mysqli_query($conn,$sql1);
-	}
+	//}
 	if(!isset($_SESSION['c']))
 	$_SESSION['c']=0;
 

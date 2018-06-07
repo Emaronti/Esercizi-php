@@ -73,8 +73,10 @@ h1{
 #span{
 	color:red;
 	font-weight:bold;
-	font-size:11px;
+	font-size:14px;
 }
+
+
 #bott{
 	cursor:pointer;
 	border-radius: .5em;

@@ -7,7 +7,7 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="homepage.css" />
 	
 <div  align='center'>	
-    <a href='homepage.php'>
+    <a href='index.php'>
 			<img   id='bott8' src='http://www.tecnau.it/wp-content/uploads/2016/07/Logo_definitivo_trasparente_HD.png'  height="150" width="533" >
 	</a>
 </div>

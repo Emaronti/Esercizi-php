@@ -83,7 +83,7 @@ if(mysqli_num_rows($result)>0){?>
 
 else{?>
 <table id='table1'>
-<br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
 	<tr>
 		<td> <strong style='color:black; font-size:30;background-color:white'>Inserimento</strong></td>
 		<td> <strong style='color:black; font-size:30;background-color:white'>Calendario</strong>   </td>

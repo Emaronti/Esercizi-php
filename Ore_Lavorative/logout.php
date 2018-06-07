@@ -4,7 +4,7 @@
 	unset($_SESSION['password']);
 	$msg = "LOG-OUT EFFETTUATO.";
 	$msg = urlencode($msg); 
-	header("location: homepage.php?msg=$msg");
+	header("location: index.php?msg=$msg");
 	exit();
 
 ?>

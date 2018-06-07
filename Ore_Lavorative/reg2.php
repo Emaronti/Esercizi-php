@@ -31,8 +31,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	
 	if(mysqli_num_rows($y)>0){
 		
-		$_SESSION['msg']="<div id='span' align ='center'>Username già esistente.</div>";
-		header ('location: dipendenti.php') ;			
+		$_SESSION['msg']="<div id='span' align ='center'>Username gia' esistente.</div>";
+    
+    if(isset($_REQUEST['tipoutente'])==false){
+       header ('location: reg.php') ; 
+        
+      }
+      else{
+       header ('location: dipendenti.php') ; 
+      }
+    
+    
+		
 		
 	}
 	
@@ -54,6 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		
 		
 		if($tipo=="Amministratore"){
+      $_SESSION['msg']="<div id='span1' style='color:green;' align ='center'>Account creato con successo</div>";
 		$sql="INSERT INTO utente (Username, Password) VALUES ('$username','$password')";
 		$result=mysqli_query($conn,$sql);
 		$sql2="select idUtente from utente where Username='$username'";
@@ -67,6 +78,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		}
 		
 		else if($tipo=="Commerciale"){
+      $_SESSION['msg']="<div id='span1' style='color:green;' align ='center'>Account creato con successo</div>";
 		$sql="INSERT INTO utente (Username, Password) VALUES ('$username','$password')";
 		$result=mysqli_query($conn,$sql);
 		$sql2="select idUtente from utente where Username='$username'";
@@ -80,6 +92,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		}
 		
 		else if($tipo=="Dipendente"){
+      $_SESSION['msg']="<div id='span1' style='color:green;' align ='center'>Account creato con successo</div>";
 		$sql="INSERT INTO utente (Username, Password) VALUES ('$username','$password')";
 		$result=mysqli_query($conn,$sql);
 		$sql2="select idUtente from utente where Username='$username'";
@@ -90,7 +103,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 		$sql3="INSERT INTO ore_totali (idUtente, Extra_ore) VALUES ('$ar[0]',0)";
 		$result3=mysqli_query($conn,$sql3);
       if(isset($_REQUEST['tipoutente'])==false){
-        header("location:homepage.php");
+        header("location:reg.php");
        }
       else{
        header("location: dipendenti.php");
