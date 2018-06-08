@@ -28,7 +28,8 @@
 	if($a[0]==null){
 		$a[0]=0;
 	}
-	$sql1="update ore_totali set Ore_totali='$a[0]' inner join utente on ore_totali.idUtente=utente.idUtente where utente.Username='$username';";  //andare a togliere la colonna idProgetto da ore_totali poiché inutile
+
+	$sql1="update ore_totali set Ore_totali='$a[0]' where idUtente='$id';";  //andare a togliere la colonna idProgetto da ore_totali poiché inutile
 	$result1=mysqli_query($conn,$sql1);
 	//}
 	if(!isset($_SESSION['c']))
@@ -57,7 +58,7 @@
 <table border='1' align='center'>
 <tr><th>Nome progetto</th><th>Ore totali</th></tr>
 <?php
- $sql2='select progetto.nome,ore_totali.Ore_totali from ore_totali inner join progetto on ore_totali.idProgetto=progetto.idProgetto where ore_totali!=0';	
+ $sql2='SELECT progetto.nome, SUM( data.ore ) FROM data INNER JOIN progetto ON data.idProgetto = progetto.idProgetto WHERE data.idUtente ='.$id.' GROUP BY data.idProgetto';	
  $result2=mysqli_query($conn,$sql2);
  while($dati = mysqli_fetch_array($result2)){ 
  
@@ -68,7 +69,7 @@ echo "<tr>";
 	}
 echo "</tr>";	
 }
-$sql4="select sum(Ore_totali) from ore_totali";
+$sql4="select sum(Ore_totali) from ore_totali where idUtente=".$id."";
 $result4=mysqli_query($conn,$sql4);
 $g=mysqli_fetch_array($result4);
 echo "<div align='center'><strong>Ore complessive: ".$g[0]."</strong></div><br>";

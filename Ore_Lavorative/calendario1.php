@@ -127,7 +127,8 @@ $utente=1;
 			}
 			
 			else{
-				
+        //query funzionante ma modificare l'array arr poiché ci sono colonne in meno
+				//select  progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto where idUtente=8 and data.data="2018-06-8"
 			$sql="select utente.Username, progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto inner join utente on data.idUtente=utente.idUtente inner join uten on data.idUtente=uten.idUtente where data.data='$yn-$mn-$i' and utente.Username='$username';";
 			$result=mysqli_query($conn,$sql);
 			}
