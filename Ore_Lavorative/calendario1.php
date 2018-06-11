@@ -129,7 +129,7 @@ $utente=1;
 			else{
         //query funzionante ma modificare l'array arr poiché ci sono colonne in meno
 				//select  progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto where idUtente=8 and data.data="2018-06-8"
-			$sql="select utente.Username, progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto inner join utente on data.idUtente=utente.idUtente inner join uten on data.idUtente=uten.idUtente where data.data='$yn-$mn-$i' and utente.Username='$username';";
+			$sql="select  progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto where idUtente=$id and data.data='$yn-$mn-$i'";
 			$result=mysqli_query($conn,$sql);
 			}
 			
@@ -168,16 +168,16 @@ $utente=1;
 			$var='';
 			for($r=0;$r<mysqli_num_rows($result);$r++){
         
-			if($arr[$r][1]!='Non significativo')	
-			$var=$var."    ".$arr[$r][1];
+			if($arr[$r][3]!='Non significativo')	
+			$var=$var."    ".$arr[$r][3];
 			}
 			echo $var;
 			
 			echo "&#13 Descrizione: ";
 			$var1='';
 			for($r1=0;$r1<mysqli_num_rows($result);$r1++){
-				if($arr[$r1][6]!='Non significativa')
-			$var1=$var1." &#13 &#13  ".$arr[$r1][6];
+				if($arr[$r1][5]!='Non significativa')
+			$var1=$var1." &#13 &#13  ".$arr[$r1][5];
 			}
 			echo $var1;
 			
@@ -185,26 +185,26 @@ $utente=1;
 			
 			for($v=0;$v<mysqli_num_rows($result);$v++){	
           
-				if($arr[$v][5]=='Gnl'){
+				if($arr[$v][4]=='Gnl'){
 					$art=1;         
 				}
-				else if($arr[$v][5]=='Gl'){
+				else if($arr[$v][4]=='Gl'){
 					$art1=1;
           
 				}
-				else if($arr[$v][5]=='Permesso'){
+				else if($arr[$v][4]=='Permesso'){
 					$art2=1;
           
 				}
-				else if($arr[$v][5]=='Trasferta'){
+				else if($arr[$v][4]=='Trasferta'){
 					$art3=1;
           
 				}
-				else if($arr[$v][5]=='Ferie'){
+				else if($arr[$v][4]=='Ferie'){
 					$art4=1;
           
 				}
-				else if($arr[$v][5]=='Malattia'){
+				else if($arr[$v][4]=='Malattia'){
 					$art5=1;
           
 				}
@@ -250,17 +250,17 @@ $utente=1;
 				
 			echo  "';border:1px solid black'>".$i."<p>";for($u=0;$u<mysqli_num_rows($result);$u++){
 				
-				if($arr[$u][5]=='Trasferta' || $arr[$u][5]=='Gl'){
-				echo $arr[$u][1]."<br>Ore:".$arr[$u][3]."<br>".$arr[$u][4]."<hr width='100px'>"; 
+				if($arr[$u][4]=='Trasferta' || $arr[$u][4]=='Gl'){
+				echo $arr[$u][0]."<br>Ore:".$arr[$u][2]."<br>".$arr[$u][3]."<hr width='100px'>"; 
 				}
 			
-				else if($arr[$u][5]=='Permesso'){
+				else if($arr[$u][4]=='Permesso'){
 				echo "Permesso<br>Ore:".$arr[$u][3]."<hr width='100px'>";
 				}
 				}
 				$extra=0;
 				for($f=0;$f<mysqli_num_rows($result);$f++){
-					$extra=$extra+$arr[$f][3];
+					$extra=$extra+$arr[$f][2];
 				}
 				if($art5 != 1 && $art4 != 1 )
 				{				
