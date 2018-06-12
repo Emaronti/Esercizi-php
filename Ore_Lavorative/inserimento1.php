@@ -15,7 +15,9 @@
 	$result12=mysqli_query($conn,$sql1);
 	if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){		 
 	$utente=$_REQUEST['utenti'];
-	
+	$sql3="select idUtente from uten where idUten='$utente'";
+	$result3=mysqli_query($conn,$sql3);
+	$arre=mysqli_fetch_array($result3);
 	}
 	$nome_p=$_REQUEST['progetto'];
 	$ore=$_REQUEST['ore'];
@@ -26,9 +28,7 @@
 	$luogo=$_REQUEST['luogo'];
 	
 	
-	$sql3="select idUtente from uten where idUten='$utente'";
-	$result3=mysqli_query($conn,$sql3);
-	$arre=mysqli_fetch_array($result3);
+	//probabilmente è un errore di  primary key della data 
 	
 	
 	
@@ -100,11 +100,11 @@ if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){
 		$result7=mysqli_query($conn,$sql7);
 	}
 	}
-	if($result5==true)
+	if(isset($result5) && $result5==true)
 		{
 		   header("location: orelavoro.php");
 		}
-	else if($result==true){
+	else if(isset($result) && $result==true){
 		 header("location: inserimento.php");
 	}	
 }

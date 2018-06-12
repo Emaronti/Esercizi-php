@@ -111,7 +111,12 @@ $utente=1;
 	$db=mysqli_select_db($conn,'orelavorative') or die ("no database");
 	
 	$username=$_SESSION['username'];
-            
+            $art=0;
+			$art1=0;
+			$art2=0;
+			$art3=0;
+			$art4=0;
+			$art5=0;
 	
 		for($i=1;$i<=$nd;$i++){
       
