@@ -16,8 +16,12 @@ session_start();
 	if(isset($_SESSION['msg'])==true){
 		echo $_SESSION['msg'];
 	}
+  if(isset($_SESSION['msg1'])==true){
+		echo $_SESSION['msg1'];
+	}
 	
 		$_SESSION['msg']=NULL;
+  $_SESSION['msg1']=NULL;
 	
 ?>
 <div align='center'>

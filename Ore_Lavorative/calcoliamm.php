@@ -29,10 +29,10 @@ session_start();
 	<select name='utenti' id='bott1' >
 		<option value=''>Utenti</option>
 	<?php
-		$sql1='select Utenti from uten ';
+		$sql1='SELECT idUten FROM uten ORDER BY idUten DESC LIMIT 1 ';
 		$result1=mysqli_query($conn,$sql1);
-		$n=mysqli_num_rows($result1);
-		for($i=1;$i<=$n;$i++){
+		$n=mysqli_fetch_array($result1);
+		for($i=1;$i<=$n[0];$i++){
 		$sql="select Utenti from uten where idUten='$i'";
 		$result=mysqli_query($conn,$sql);
 		$ar=mysqli_fetch_array($result);
@@ -609,10 +609,10 @@ session_start();
 	<th style='color:red;background-color:blue'>Extra ore</th>
 	<?php
 		
-		$sql1='select Utenti from uten ';
+		$sql1='SELECT idUten FROM uten ORDER BY idUten DESC LIMIT 1 ';
 		$result1=mysqli_query($conn,$sql1);
-		$n=mysqli_num_rows($result1);
-		for($i=1;$i<=$n;$i++){
+		$n=mysqli_fetch_array($result1);
+		for($i=1;$i<=$n[0];$i++){
 			$somma=0;
 		$sql="select Utenti from uten where idUten='$i'";
 		$result=mysqli_query($conn,$sql);

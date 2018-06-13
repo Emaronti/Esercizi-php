@@ -61,7 +61,7 @@ if(mysqli_num_rows($result)>0){?>
 
 
 	else if(mysqli_num_rows($result1)>0){?>
-	<br><br><br><br><br><br><br><br><br><br>
+	<br>
 	<table id='table1'>
 	<tr>
 		<td> <strong style='color:black; font-size:30;background-color:white'>Calendario</strong> </td>

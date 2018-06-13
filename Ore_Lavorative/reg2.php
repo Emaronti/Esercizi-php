@@ -116,7 +116,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 	  else
 		{
 		 $_SESSION['msg1']="<div id='span' align ='center'>Username o password errate.</div>";
-		 header ('location: dipendenti.php') ;	 
+      if(isset($_REQUEST['tipoutente'])==false){
+        header("location:reg.php");
+       }
+      else{
+       header("location: dipendenti.php");
+      }
+		
 		 
 		}
 }

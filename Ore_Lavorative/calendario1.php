@@ -52,7 +52,7 @@ $utente=1;
 	}
 	
 	else if(isset($_REQUEST['utente'])==false){
-		if($_SESSION['uten']!=null){
+		if(isset($_SESSION['uten']) && $_SESSION['uten']!=null){
 		$utente=$_SESSION['uten'];
 		}
 		else{
@@ -126,7 +126,9 @@ $utente=1;
 			$result1=mysqli_query($conn,$sql1);
 			if(mysqli_num_rows($result)>0 || mysqli_num_rows($result1)>0){
 			
-			$sql="select  utente.Username, progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto inner join utente on data.idUtente=utente.idUtente inner join uten on data.idUtente=uten.idUtente where data.data='$yn-$mn-$i' and uten.idUten='$utente';";
+        //select  utente.Username, progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto inner join utente on data.idUtente=utente.idUtente inner join uten on data.idUtente=uten.idUtente where data.data='$yn-$mn-$i' and uten.idUten='$utente'
+        
+			$sql="select  progetto.nome,data.data,data.ore,data.luogo,tipogiornata.Tipo,data.descrizione from data inner join tipogiornata on data.idTipo=tipogiornata.idTipo inner join progetto on data.idProgetto=progetto.idProgetto inner join uten on data.idUtente=uten.idUtente where idUten=$utente and data.data='$yn-$mn-$i'";
 			$result=mysqli_query($conn,$sql);
 			
 			}
@@ -182,7 +184,7 @@ $utente=1;
 			$var1='';
 			for($r1=0;$r1<mysqli_num_rows($result);$r1++){
 				if($arr[$r1][5]!='Non significativa')
-			$var1=$var1." &#13 &#13  ".$arr[$r1][5];
+			$var1=$var1." &#13   ".$arr[$r1][5];
 			}
 			echo $var1;
 			
