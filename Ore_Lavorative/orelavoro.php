@@ -49,10 +49,10 @@ session_start();
 	<tr><th colspan='2'>	<select name='utenti' id='bott1' required>
 		<option value=''>Utenti</option>
 	<?php
-		$sql1='select Utenti from uten ';
+		$sql1='SELECT idUten FROM uten ORDER BY idUten DESC LIMIT 1 ';
 		$result1=mysqli_query($conn,$sql1);
-		$n=mysqli_num_rows($result1);
-		for($i=1;$i<=$n;$i++){
+		$n=mysqli_fetch_array($result1);
+		for($i=1;$i<=$n[0];$i++){
 		$sql="select Utenti from uten where idUten='$i'";
 		$result=mysqli_query($conn,$sql);
 		$ar=mysqli_fetch_array($result);
@@ -69,19 +69,19 @@ session_start();
 			
 			<tr><th align='right'><strong>Tipo di giornata:</strong></th><th align='left'>
 			<select  id='bott2' onchange='tipog()' name='giornata'   required >
-				  <option value='6'>Lavoro</option>  
-				  <option value='2'>Trasferta</option>
-				  <option value='3'>Permessi</option>
-				  <option value='4'>Malattia</option>
-				  <option value='5'>Festivo</option>
-				  <option value='1'>Ferie</option>
+				  <option value='1'>Lavoro</option>  
+				  <option value='4'>Trasferta</option>
+				  <option value='6'>Permessi</option>
+				  <option value='5'>Malattia</option>
+				  <option value='2'>Festivo</option>
+				  <option value='3'>Ferie</option>
 			</select></th></tr>
 			
 			<tr><th align='right'><strong>Tipo di impiego:</strong> </th><th align='left'>
 			
 			<select name='progetto' id='bott3' required>
 			<?php 
-        echo "AAAAAA";
+       
 				$sql1='select nome from progetto ';
 				$result1=mysqli_query($conn,$sql1);
 				$n=mysqli_num_rows($result1);
@@ -171,10 +171,10 @@ session_start();
 <select name='utenti1' id='bott1' required>
 		<option value=''>Utenti</option>
 	<?php
-		$sql1='select Utenti from uten ';
+		$sql1='SELECT idUten FROM uten ORDER BY idUten DESC LIMIT 1 ';
 		$result1=mysqli_query($conn,$sql1);
-		$n=mysqli_num_rows($result1);
-		for($i=1;$i<=$n;$i++){
+		$n=mysqli_fetch_array($result1);
+		for($i=1;$i<=$n[0];$i++){
 		$sql="select Utenti from uten where idUten='$i'";
 		$result=mysqli_query($conn,$sql);
 		$ar=mysqli_fetch_array($result);
@@ -192,10 +192,26 @@ session_start();
 if(isset($_REQUEST['data1'])){
 $data1=$_REQUEST['data1'];
 $utente=$_REQUEST['utenti1'];
-echo $utente;
+
 $sql3="select idUtente from uten where idUten='$utente'";
 	$result3=mysqli_query($conn,$sql3);
 	$arre=mysqli_fetch_array($result3);
+  
+  $sql1="select ore from data where data='$data1' and idUtente=$id";
+ $result1=mysqli_query($conn,$sql1);
+ $arr=mysqli_fetch_array($result1);
+ 
+ if($arr[0]>8){
+   $ex=$arr[0]-8;
+   $sql2="update ore_totali set Ore_totali=Ore_totali-$arr[0], Extra_ore=Extra_ore-$ex where  idUtente=$id";
+   $result2=mysqli_query($conn,$sql2);  
+ } 
+ else if($arr[0]<8){
+   $ex=$arr[0]-8;
+   $sql2="update ore_totali set Ore_totali=Ore_totali-$arr[0], Extra_ore=Extra_ore-$ex where idUtente=$id";
+   $result2=mysqli_query($conn,$sql2);  
+ }
+  
 
 $sql="delete from data  where idUtente='$arre[0]' and data='$data1'";
 $result=mysqli_query($conn,$sql);

@@ -15,6 +15,7 @@
 	$result12=mysqli_query($conn,$sql1);
 	if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){		 
 	$utente=$_REQUEST['utenti'];
+  
 	$sql3="select idUtente from uten where idUten='$utente'";
 	$result3=mysqli_query($conn,$sql3);
 	$arre=mysqli_fetch_array($result3);
@@ -28,8 +29,9 @@
 	$luogo=$_REQUEST['luogo'];
 	
 	
+
 	//probabilmente è un errore di  primary key della data 
-	
+
 	
 	
 	if($minuti==0){
@@ -81,10 +83,30 @@ if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){
 	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES ('$nome_p','$arre[0]','$data','$ore', '$luogo', '$giornata', '$descrizione')";
 	$result5=mysqli_query($conn,$sql);
 	
+  if($ore>8){
+		$app=$ore-8;
+		$sql7="update ore_totali set Extra_ore=Extra_ore+$app where idUtente=$arre[0]";
+		$result7=mysqli_query($conn,$sql7);
+    
+    $sql8="update ore_totali set Ore_totali=Ore_totali+$ore where idUtente=$arre[0]";
+		$result8=mysqli_query($conn,$sql8);
 	}
+	else if($ore<8){
+		$app=$ore-8;
+		$sql7="update ore_totali set Extra_ore=Extra_ore+$app where idUtente=$arre[0]";
+		$result7=mysqli_query($conn,$sql7);
+    
+    $sql8="update ore_totali set Ore_totali=Ore_totali+$ore where idUtente=$arre[0]";
+		$result8=mysqli_query($conn,$sql8);
+	}
+  
+	}
+  
 	else{
 	$username=$_SESSION['username'];
-	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES ('$nome_p','$_SESSION[idU]','$data','$ore', '$luogo', '$giornata', '$descrizione')";
+  
+   
+	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES ('$nome_p','$id','$data','$ore', '$luogo', '$giornata', '$descrizione')";
 	$result=mysqli_query($conn,$sql);
 	$sql2="select idUtente from utente where Username='$username'";
 	$result2=mysqli_query($conn,$sql2);
@@ -93,11 +115,17 @@ if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){
 		$app=$ore-8;
 		$sql7="update ore_totali set Extra_ore=Extra_ore+$app where idUtente=$art[0]";
 		$result7=mysqli_query($conn,$sql7);
+    
+    $sql8="update ore_totali set Ore_totali=Ore_totali+$ore where idUtente=$art[0]";
+		$result8=mysqli_query($conn,$sql8);
 	}
 	else if($ore<8){
 		$app=$ore-8;
 		$sql7="update ore_totali set Extra_ore=Extra_ore+$app where idUtente=$art[0]";
 		$result7=mysqli_query($conn,$sql7);
+    
+    $sql8="update ore_totali set Ore_totali=Ore_totali+$ore where idUtente=$art[0]";
+		$result8=mysqli_query($conn,$sql8);
 	}
 	}
 	if(isset($result5) && $result5==true)

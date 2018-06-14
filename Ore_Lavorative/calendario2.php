@@ -1,6 +1,6 @@
  <html> 
   <?php
-    session_start();
+  session_start();
 	$servername = "localhost";
 	$username = "root";
 	$password = "indi1";
@@ -14,7 +14,7 @@
 ?>
 <table id='table1' align='center' >
 	<tr align='center'>
-		<td><img   id='bott' src='http://192.168.55.9/Stage/Logo Tecnau/LOGO_Tecnau_Definitivo.png'  height='100' width='433'>
+		<td><img   id='bott' src='http://www.tecnau.it/wp-content/uploads/2016/07/Logo_definitivo_trasparente_HD.png'  height='100' width='433'>
 		</td>
 		<td valign="top"><h2 id='h3' style='margin-top:30px;margin-bottom:0px'>Gestione commesse</h2>
 		</td>
@@ -69,7 +69,7 @@
 	$sql2='select nome,descrizione,idTipo_Pro,AnnoStart,pro_commessa from progetto ';
 	$result2=mysqli_query($conn,$sql2);
 	$n=mysqli_num_rows($result2);
-	for($i=2;$i<=$n;$i++){
+	for($i=0;$i<=$n;$i++){
 		$sql3="select nome,descrizione,idTipo_Pro,AnnoStart,pro_commessa from progetto  where idProgetto='$i' order by pro_commessa desc";
 		$result3=mysqli_query($conn,$sql3);
 		$ar=mysqli_fetch_array($result3);
@@ -123,6 +123,9 @@
 		<option value='18'>2018</option>
 		<option value='19'>2019</option>
 		<option value='20'>2020</option>
+    <option value='21'>2021</option>
+		<option value='22'>2022</option>
+        
 		</select>
 		<br><br>
 		
@@ -132,7 +135,7 @@
 				$sql1='select nome from progetto ';
 				$result1=mysqli_query($conn,$sql1);
 				$n=mysqli_num_rows($result1);
-				for($i=2;$i<=$n;$i++){
+				for($i=1;$i<=$n;$i++){
 				$sql="select idProgetto,nome from progetto where idProgetto='$i'";
 				$result=mysqli_query($conn,$sql);
 				$ar=mysqli_fetch_array($result);

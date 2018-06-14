@@ -19,8 +19,17 @@ $id=$_SESSION['idU'];
 	<tr align='center'>
 		<td><img   id='bott' src='http://www.tecnau.it/wp-content/uploads/2016/07/Logo_definitivo_trasparente_HD.png'  height='100' width='433'>
 		</td>
-		<td valign="top"><h2 id='h3' style='margin-top:20px;margin-bottom:0px'>Calendario</h2>
-		 <form action='calendario.php'  method='post'>
+		<td valign="top"><h2 id='h3' style='margin-top:20px;margin-bottom:0px'>Calendario</h2> 
+		</td>
+		<td valign="middle">
+		<a href='portale1.php'><img id='home' src='http://4.bp.blogspot.com/--ddYKXz6fpc/Uh1NrRYLtVI/AAAAAAAAAPA/Bd16ChUzC2Q/s1600/home-icon.png' height='50' width='50'></a>
+		</td>
+		<td>
+		<span id='spa1'><strong><?php echo "&nbsp Utente: $username &nbsp" ?></strong></span><br><br>
+		<a  href='logout.php'><button id='logout'>Logout</button></a>	</td>	
+	</tr></table>
+<br>
+  	 <form action='calendario.php'  method='post'>
 		 <?php 	$sql="select Amministratori from amm where idUtente=$id";
 				$result=mysqli_query($conn,$sql);
 				$sql1="select Commerciale from commerc where idUtente=$id";
@@ -30,7 +39,7 @@ $id=$_SESSION['idU'];
 		 <strong>Inserisci utente</strong>
 		 
 
-	<select name='utente' id='bott3' required>
+	<select name='utente' id='bott3' style="margin-right:50px;" required>
 					<option value=''>Utente</option>
 					<?php 
 						$sql1='SELECT idUten FROM uten ORDER BY idUten DESC LIMIT 1';
@@ -47,9 +56,10 @@ $id=$_SESSION['idU'];
 					?>
 					
 	</select>
+       
 	<strong>Inserisci il mese:</strong>
 
-	<select name='mese' id='bott1' >
+	<select name='mese' id='bott1' style="margin-right:50px;" >
 	  <option value=''>Scegli</option>
 	  <option value='1'>Gennaio</option>
 	  <option value='2'>Febbraio</option>
@@ -63,12 +73,13 @@ $id=$_SESSION['idU'];
 	  <option value='10'>Ottobre</option>
 	  <option value='11'>Novembre</option>
 	  <option value='12'>Dicembre</option>
+    
 	</select>
 
 
 <strong>Inserisci l'anno:</strong>
 
-	<select name='anno' id='bott1' >
+	<select name='anno' id='bott1' style="margin-right:50px;" >
 		<option value=''>Anno</option>
 		<option value='2004'>2004</option>
 		<option value='2005'>2005</option>
@@ -118,20 +129,9 @@ $id=$_SESSION['idU'];
 		<option value='2049'>2049</option>
 		<option value='2050'>2050</option>
 		</select>
+       
 <input type='submit' id='logout' value='Cerca'>
-
-
-</form> 
-		</td>
-		<td valign="middle">
-		<a href='portale1.php'><img id='home' src='http://4.bp.blogspot.com/--ddYKXz6fpc/Uh1NrRYLtVI/AAAAAAAAAPA/Bd16ChUzC2Q/s1600/home-icon.png' height='50' width='50'></a>
-		</td>
-		<td>
-		<span id='spa1'><strong><?php echo "&nbsp Utente: $username &nbsp" ?></strong></span><br><br>
-		<a  href='logout.php'><button id='logout'>Logout</button></a>	</td>	
-	</tr></table>
-
-<br>
+  </form>
 <fieldset style='background-color:white'>
 	<legend>Tipo di giornata</legend>
 &nbsp&nbsp&nbsp&nbsp	Giornata lavorativa: <strong style='background-color:white;border:1px solid black'>&nbsp&nbsp&nbsp&nbsp</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFerie: <strong style='background-color:green;border:1px solid black'>&nbsp&nbsp&nbsp&nbsp</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Festivo: <strong style='background-color:#fcfc6b;border:1px solid black'>&nbsp&nbsp&nbsp&nbsp</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Malattia: <strong style='background-color:#c868fc;border:1px solid black'>&nbsp&nbsp&nbsp&nbsp</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong>Permesso: <strong style='background-color:#c8975F;border:1px solid black'>&nbsp&nbsp&nbsp&nbsp</strong>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp|&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</strong>Trasferta: <strong style='background-color:#a6fea6;border:1px solid black'>&nbsp&nbsp&nbsp&nbsp</strong>                            

@@ -59,7 +59,7 @@ else{
 		<span id='spa1'><strong><?php echo "&nbsp Utente: $username &nbsp" ?></strong></span><br><br>
 		<a  href='logout.php'><button id='logout'>Logout</button></a>	</td>	
 	</tr></table>
-<br>
+
 <?php
 	if(isset($_SESSION['msg'])==true){
 		echo $_SESSION['msg'];
@@ -68,7 +68,7 @@ else{
 		$_SESSION['msg']=NULL;
 	
 ?>
-<br>
+
 <div align='center'>
 	<table>
 		<form  id='form1' action='inserimento1.php' method='post'>
@@ -174,8 +174,26 @@ else{
 if(isset($_REQUEST['data1'])){
 $data1=$_REQUEST['data1'];
 
-$sql="delete from data  where idUtente=$id and data='$data1'";
+ 
+  
+ $sql1="select ore from data where data='$data1' and idUtente=$id";
+ $result1=mysqli_query($conn,$sql1);
+ $arr=mysqli_fetch_array($result1);
+ 
+ if($arr[0]>8){
+   $ex=$arr[0]-8;
+   $sql2="update ore_totali set Ore_totali=Ore_totali-$arr[0], Extra_ore=Extra_ore-$ex where  idUtente=$id";
+   $result2=mysqli_query($conn,$sql2);  
+ } 
+ else if($arr[0]<8){
+   $ex=$arr[0]-8;
+   $sql2="update ore_totali set Ore_totali=Ore_totali-$arr[0], Extra_ore=Extra_ore-$ex where idUtente=$id";
+   $result2=mysqli_query($conn,$sql2);  
+ }
+  
+  $sql="delete from data  where idUtente=$id and data='$data1'";
 $result=mysqli_query($conn,$sql);
+  
 }
 ?>
 <link rel="stylesheet" type="text/css" href="homepage.css" />

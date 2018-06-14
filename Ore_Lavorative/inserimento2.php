@@ -13,9 +13,9 @@ session_start();
 ?>
 <table id='table1' align='center' >
 	<tr align='center'>
-		<td><img   id='bott' src='http://192.168.55.9/Stage/Logo Tecnau/LOGO_Tecnau_Definitivo.png'  height='100' width='433'>
+		<td><img   id='bott' src='http://www.tecnau.it/wp-content/uploads/2016/07/Logo_definitivo_trasparente_HD.png'  height='100' width='433'>
 		</td>
-		<td valign="bottom"><h2 id='h3' style='margin-bottom:33px'>Gestione dipendenti</h2>
+		<td valign="bottom"><h2 id='h3' style='margin-bottom:33px'>Gestione progetti</h2>
 		</td>
 		<td>
 		<a href='portale1.php'><img id='home' src='http://4.bp.blogspot.com/--ddYKXz6fpc/Uh1NrRYLtVI/AAAAAAAAAPA/Bd16ChUzC2Q/s1600/home-icon.png' height='50' width='50'></a>
