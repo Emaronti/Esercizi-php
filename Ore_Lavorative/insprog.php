@@ -26,12 +26,7 @@ session_start();
 	$sql="insert into progetto (nome,descrizione) values ('$nome','$desc')";
 	$result=mysqli_query($conn,$sql);
 	
-	$sql2="select idProgetto from progetto where nome='$nome'";
-	$result2=mysqli_query($conn,$sql2);
-	$arr=mysqli_fetch_array($result2);
 	
-	$sql1="insert into ore_totali (Ore_totali,Extra_ore,idProgetto) values (0,0,'$arr[0]')";
-	$result1=mysqli_query($conn,$sql1);
 	
 	header('location:inserimento2.php');
 	}
