@@ -128,6 +128,7 @@ if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){
 		$result8=mysqli_query($conn,$sql8);
 	}
 	}
+  echo "Prova";
 	if(isset($result5) && $result5==true)
 		{
 		   header("location: orelavoro.php");

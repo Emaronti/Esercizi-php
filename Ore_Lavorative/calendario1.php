@@ -171,7 +171,7 @@ $utente=1;
 			echo $adj."<td align='center' height='100' width='157' style='border:1px solid black'>".$i."</td>";
 			}
 			else if(mysqli_num_rows($result)>0){
-			echo $adj."<td align='center' class='hoverlink' data-toggle='tooltip' title='".$arr[0][2]." &#13 ";
+			echo $adj."<td align='center' class='hoverlink' data-toggle='tooltip' title='Ore:".$arr[0][2]." &#13 ";
 			$var='';
 			for($r=0;$r<mysqli_num_rows($result);$r++){
         

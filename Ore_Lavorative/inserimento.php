@@ -15,6 +15,7 @@
 
 <html>	
 <head>
+  <link rel="stylesheet" type="text/css" href="homepage.css" />
 <script type='text/javascript'>
 function tipog(){
 var x= document.getElementById('bott2').selectedIndex;
@@ -45,6 +46,7 @@ else{
 }
 }
 </script>
+  
 </head>
 <table id='table1' align='center' >
 	<tr align='center'>
@@ -165,10 +167,10 @@ else{
 </div>
 
 <br><br><br><br>
-<form action="inserimento.php" method="post" align='center'>
+<form action="inserimento.php" method="post" align='center' style='margin-left:550px'>
 <strong>Data :</strong> <input id='bott1' type="date" name="data1" required>
 <br><br>
-<input  type='submit' id='logout' value='Elimina'>
+<input style='margin-left:70px' type='submit' id='logout' value='Elimina'>
 </form>
 <?php 
 if(isset($_REQUEST['data1'])){
@@ -196,5 +198,5 @@ $result=mysqli_query($conn,$sql);
   
 }
 ?>
-<link rel="stylesheet" type="text/css" href="homepage.css" />
+
 </html>	
