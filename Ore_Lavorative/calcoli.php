@@ -69,7 +69,7 @@ echo "<tr>";
 	}
 echo "</tr>";	
 }
-$sql4="select sum(Ore_totali) from ore_totali where idUtente=".$id."";
+$sql4="select Ore_totali from ore_totali where idUtente=".$id."";
 $result4=mysqli_query($conn,$sql4);
 $g=mysqli_fetch_array($result4);
 echo "<div align='center'><strong>Ore complessive: ".$g[0]."</strong></div><br>";
