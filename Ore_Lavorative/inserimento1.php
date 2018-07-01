@@ -51,12 +51,12 @@ if($giornata==2 || $giornata==3 || $giornata==5){
 	if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){
 	
 	
-		$sql1="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (1,'$arre[0]','$data',0,'Non significativa', '$giornata','Non significativa' ) ";
+		$sql1="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (10,'$arre[0]','$data',0,'Non significativa', '$giornata','Non significativa' ) ";
 		$result1=mysqli_query($conn,$sql1);
 		header("location: orelavoro.php");
 	}
 	else{
-		$sql1="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (1,'$_SESSION[idU]','$data',0,'Non significativa', '$giornata','Non significativa' )";
+		$sql1="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (10,'$_SESSION[idU]','$data',0,'Non significativa', '$giornata','Non significativa' )";
 		$result1=mysqli_query($conn,$sql1);
 		header("location: inserimento.php");
 	}	
@@ -66,12 +66,12 @@ if($giornata==2 || $giornata==3 || $giornata==5){
 else if($giornata==6)	{
 	
 	if(mysqli_num_rows($result13)>0 || mysqli_num_rows($result12)>0){		
-	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (1,'$arre[0]','$data','$ore', 'Non significativa', '$giornata', 'Non significativa')";
+	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (0,'$arre[0]','$data','$ore', 'Non significativa', '$giornata', 'Non significativa')";
 	$result=mysqli_query($conn,$sql);
 	header("location: orelavoro.php");
 	}
 	else{
-	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (1,'$_SESSION[idU]','$data','$ore', 'Non significativa', '$giornata', 'Non significativa')";
+	$sql="INSERT INTO data (idProgetto,idUtente,data,ore,luogo,idTipo,descrizione) VALUES (0,'$_SESSION[idU]','$data','$ore', 'Non significativa', '$giornata', 'Non significativa')";
 	$result=mysqli_query($conn,$sql);
 	header("location: inserimento.php");
 	}
